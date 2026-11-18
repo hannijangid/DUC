@@ -260,3 +260,144 @@
                 </div>
             </div>
 
+            <!-- Step 2: Select Services & Monthly Offers -->
+            <div class="form-group">
+                <label class="form-label">2. Select Package or Services (Tick to Add):</label>
+                
+                <label class="service-check offer-highlight">
+                    <span class="service-left"><input type="checkbox" id="offer15" class="srv" data-name="15 Reels Monthly Offer Plan" value="10999" onchange="calculateTotal()"> 15 Reels Monthly Plan <span class="offer-tag">OFFER</span></span>
+                    <span class="service-price">₹10,999</span>
+                </label>
+
+                <label class="service-check offer-highlight">
+                    <span class="service-left"><input type="checkbox" id="offer30" class="srv" data-name="30 Reels Monthly Mega Offer Plan" value="18999" onchange="calculateTotal()"> 30 Reels Monthly Plan <span class="offer-tag">BEST OFFER</span></span>
+                    <span class="service-price">₹18,999</span>
+                </label>
+
+                <label class="service-check">
+                    <span class="service-left"><input type="checkbox" class="srv" data-name="1 Single AI UGC Video (30 Sec)" value="999" checked onchange="calculateTotal()"> 1 Single AI UGC Video (30 Sec)</span>
+                    <span class="service-price">₹999</span>
+                </label>
+
+                <label class="service-check">
+                    <span class="service-left"><input type="checkbox" class="srv" data-name="3 AI UGC Videos Starter Bundle" value="2499" onchange="calculateTotal()"> 3 AI UGC Videos Bundle</span>
+                    <span class="service-price">₹2,499</span>
+                </label>
+
+                <label class="service-check">
+                    <span class="service-left"><input type="checkbox" class="srv" data-name="Real Estate / Property Promo Video" value="1499" onchange="calculateTotal()"> Real Estate / Property Promo Video</span>
+                    <span class="service-price">₹1,499</span>
+                </label>
+
+                <label class="service-check">
+                    <span class="service-left"><input type="checkbox" class="srv" data-name="Viral Script + 2 Extra Hooks" value="499" onchange="calculateTotal()"> Viral Script + 2 Extra Hooks</span>
+                    <span class="service-price">₹499</span>
+                </label>
+
+                <label class="service-check">
+                    <span class="service-left"><input type="checkbox" class="srv" data-name="Custom AI Avatar Creation" value="1999" onchange="calculateTotal()"> Custom AI Avatar (Apna Face/Model)</span>
+                    <span class="service-price">₹1,999</span>
+                </label>
+            </div>
+
+            <!-- Step 3: Client Details -->
+            <div class="form-group">
+                <label class="form-label">3. Your Details:</label>
+                <input type="text" id="clientName" class="text-input" placeholder="Aapka Naam / Brand Name *" required>
+                <input type="text" id="clientNote" class="text-input" placeholder="Specific Character naam (e.g. Aarav / Ananya) ya koi note">
+            </div>
+
+            <!-- Live Total Price Display -->
+            <div class="total-bar">
+                <span class="total-text">Estimated Total:</span>
+                <span class="total-amount">₹<span id="totalPrice">999</span></span>
+            </div>
+
+            <!-- Direct WhatsApp Book Now Button -->
+            <button class="book-btn" onclick="bookNow()">🚀 Book Now on WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- FLOATING CONTACT BAR -->
+    <div class="floating-bar">
+        <a href="tel:+917597145560" style="background:#38bdf8; color:#060913;">📞 Call Now</a>
+        <a href="#builder" style="background:#22c55e; color:#fff;">⚡ Book Package</a>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Filter AI Characters (All / Men / Girls / Business)
+        function filterAvatars(category, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            document.querySelectorAll('.avatar-card').forEach(card => {
+                if (category === 'all' || card.getAttribute('data-cat') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Quick Select Monthly Offer from top cards
+        function selectMonthlyOffer(offerId) {
+            document.querySelectorAll('.srv').forEach(box => box.checked = false);
+            document.getElementById(offerId).checked = true;
+            calculateTotal();
+        }
+
+        // Calculate Live Total
+        function calculateTotal() {
+            let total = 0;
+            document.querySelectorAll('.srv:checked').forEach((box) => {
+                total += parseInt(box.value);
+            });
+            document.getElementById('totalPrice').innerText = total.toLocaleString('en-IN');
+        }
+
+        // Direct WhatsApp App Redirect (No Chrome popup)
+        function bookNow() {
+            const myWhatsAppNumber = "917597145560"; 
+
+            const name = document.getElementById('clientName').value.trim();
+            if (!name) {
+                alert("Kripya pehle apna Naam ya Brand Name likhein!");
+                return;
+            }
+
+            const note = document.getElementById('clientNote').value.trim() || "None";
+            const selectedModel = document.querySelector('input[name="model"]:checked').value;
+            const total = document.getElementById('totalPrice').innerText;
+
+            let selectedServices = [];
+            document.querySelectorAll('.srv:checked').forEach((box) => {
+                selectedServices.push("• " + box.getAttribute('data-name') + " (₹" + box.value + ")");
+            });
+
+            if (selectedServices.length === 0) {
+                alert("Kripya kam se kam ek service ya package select karein!");
+                return;
+            }
+
+            const message = `*🔥 NEW AI UGC ORDER BOOKING 🔥*\n\n` +
+                            `*👤 Client Name:* ${name}\n` +
+                            `*🎭 Character Category:* ${selectedModel}\n\n` +
+                            `*📦 Selected Package/Services:*\n${selectedServices.join('\n')}\n\n` +
+                            `*💰 Total Estimated Price:* ₹${total}\n` +
+                            `*📝 Note:* ${note}`;
+
+            const encodedMsg = encodeURIComponent(message);
+            
+            // Direct WhatsApp App link (sidha WhatsApp khulega)
+            window.location.href = `whatsapp://send?phone=${myWhatsAppNumber}&text=${encodedMsg}`;
+            
+            // Backup agar desktop par ho toh 1 sec baad web link khule
+            setTimeout(() => {
+                window.location.href = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${encodedMsg}`;
+            }, 1200);
+        }
+    </script>
+
+</body>
+</html>
