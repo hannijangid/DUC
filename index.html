@@ -21,7 +21,7 @@
 
         .hero-content { position: relative; z-index: 2; }
         .badge { background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 6px 16px; border-radius: 30px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 14px; border: 1px solid rgba(56, 189, 248, 0.45); box-shadow: 0 0 15px rgba(56, 189, 248, 0.25); }
-        h1 { font-size: 28px; margin-bottom: 12px; line-height: 1.25; }
+        h1 { font-size: 30px; margin-bottom: 12px; line-height: 1.25; }
         h1 span { background: linear-gradient(90deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         p.subtitle { color: #94a3b8; max-width: 600px; margin: 0 auto 24px; font-size: 14px; }
         
@@ -30,6 +30,7 @@
         .btn-call { background: linear-gradient(135deg, #38bdf8, #0284c7); color: #050811; box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35); }
         .btn-whatsapp { background: linear-gradient(135deg, #22c55e, #16a34a); color: #ffffff; box-shadow: 0 6px 20px rgba(34, 197, 94, 0.35); }
 
+        /* TRUST BAR */
         .trust-bar { max-width: 900px; margin: 20px auto 0; padding: 0 15px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; }
         .trust-box { background: linear-gradient(145deg, #111827, #0b101d); border: 1px solid rgba(56, 189, 248, 0.25); padding: 14px 8px; border-radius: 14px; }
         .trust-num { font-size: 20px; font-weight: 800; color: #38bdf8; }
@@ -37,18 +38,30 @@
         .live-dot { display: inline-block; width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-right: 4px; animation: pulse 1.2s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
+        /* CONTAINER */
         .container { max-width: 1120px; margin: 0 auto; padding: 38px 16px 8px; }
-        .section-title { font-size: 23px; margin-bottom: 5px; text-align: center; font-weight: 800; }
+        .section-title { font-size: 24px; margin-bottom: 5px; text-align: center; font-weight: 800; }
         .section-desc { text-align: center; color: #94a3b8; margin-bottom: 22px; font-size: 13px; }
-
         .card-3d { background: linear-gradient(145deg, #111827, #0a0f1c); border: 1px solid rgba(56, 189, 248, 0.22); border-radius: 14px; box-shadow: 0 10px 25px rgba(0,0,0,0.6); transition: 0.25s; }
 
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+        /* FEATURED 16:9 WIDESCREEN VIDEO */
+        .featured-16-9 { max-width: 820px; margin: 0 auto 28px; padding: 12px; border: 2px solid #38bdf8; }
+        .featured-16-9 video { width: 100%; aspect-ratio: 16/9; border-radius: 10px; background: #000; object-fit: cover; display: block; }
+
+        /* CUSTOM VIDEO CONTROLS (PLAY/PAUSE + MUTE + VOLUME) */
+        .vid-controls { display: flex; align-items: center; justify-content: space-between; gap: 6px; background: #090e1a; padding: 6px 8px; border-radius: 8px; margin-top: 6px; border: 1px solid #1e293b; }
+        .v-btn { background: #1e293b; color: #38bdf8; border: none; border-radius: 6px; padding: 4px 8px; font-size: 11px; font-weight: 700; cursor: pointer; }
+        .v-btn:hover { background: #38bdf8; color: #050811; }
+        .vol-slider { width: 55px; accent-color: #38bdf8; cursor: pointer; height: 4px; }
+
+        /* 7 VERTICAL VIDEOS GRID */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 12px; }
         .video-card { padding: 8px; text-align: center; }
-        .video-card video { width: 100%; height: 220px; border-radius: 10px; background: #000; object-fit: cover; border: 1px solid #1e293b; }
+        .video-card video { width: 100%; height: 225px; border-radius: 10px; background: #000; object-fit: cover; border: 1px solid #1e293b; display: block; }
         .video-tag { margin-top: 6px; font-weight: 700; font-size: 13px; }
         .video-sub { font-size: 11px; color: #38bdf8; }
 
+        /* CHARACTER FILTER TABS & SELECTABLE AVATARS */
         .filter-tabs { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
         .tab-btn { background: #111827; color: #94a3b8; border: 1px solid #1e293b; padding: 7px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; }
         .tab-btn.active { background: #38bdf8; color: #050811; border-color: #38bdf8; }
@@ -58,10 +71,11 @@
         .avatar-card.selected-char { border: 2px solid #22c55e; box-shadow: 0 0 18px rgba(34, 197, 94, 0.45); transform: scale(1.02); }
         .select-badge { position: absolute; top: 14px; right: 14px; background: #22c55e; color: #fff; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 10px; display: none; }
         .avatar-card.selected-char .select-badge { display: block; }
-        .avatar-card img { width: 100%; height: 155px; object-fit: cover; border-radius: 10px; background: #1e293b; margin-bottom: 7px; }
+        .avatar-card img { width: 100%; height: 165px; object-fit: cover; border-radius: 10px; background: #1e293b; margin-bottom: 7px; }
         .avatar-name { font-weight: 700; font-size: 13px; color: #f8fafc; }
         .avatar-role { font-size: 11px; color: #38bdf8; }
 
+        /* MONTHLY OFFER PACKAGES */
         .offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
         .offer-card { padding: 20px; position: relative; overflow: hidden; border: 2px solid #818cf8; }
         .offer-ribbon { position: absolute; top: 12px; right: -30px; background: linear-gradient(90deg, #f59e0b, #ef4444); color: #fff; font-size: 10px; font-weight: 800; padding: 4px 34px; transform: rotate(35deg); }
@@ -71,6 +85,7 @@
         .offer-list { list-style: none; font-size: 12px; color: #cbd5e1; margin-bottom: 14px; }
         .offer-list li { margin-bottom: 6px; }
 
+        /* CUSTOM PACKAGE BUILDER */
         .builder-box { background: linear-gradient(145deg, #0f172a, #080c17); border: 2px solid #38bdf8; border-radius: 18px; padding: 22px 16px; }
         .form-group { margin-bottom: 20px; }
         .form-label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 8px; color: #38bdf8; }
@@ -92,12 +107,18 @@
 
         .book-btn { width: 100%; padding: 15px; font-size: 16px; font-weight: 800; background: linear-gradient(135deg, #22c55e, #15803d); color: #fff; border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4); }
 
+        /* INTERACTIVE STAR RATING & CLIENT FEEDBACK */
         .feedback-box { padding: 20px; }
+        .star-picker { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+        .star-picker span { font-size: 28px; cursor: pointer; color: #475569; transition: 0.2s; }
+        .star-picker span.active-star { color: #facc15; text-shadow: 0 0 10px rgba(250, 204, 21, 0.5); }
         .review-list { margin-top: 18px; display: grid; gap: 10px; }
         .review-item { background: #111827; border-left: 3px solid #38bdf8; padding: 12px; border-radius: 8px; }
-        .review-author { font-weight: 700; font-size: 13px; color: #38bdf8; }
+        .review-author { font-weight: 700; font-size: 13px; color: #facc15; }
+        .review-author span { color: #38bdf8; margin-left: 6px; }
         .review-text { font-size: 13px; color: #cbd5e1; margin-top: 3px; }
 
+        /* FLOATING BAR */
         .floating-bar { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); padding: 8px 14px; border-radius: 50px; border: 1px solid rgba(56, 189, 248, 0.4); display: flex; gap: 10px; z-index: 100; }
         .floating-bar a { text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 14px; border-radius: 25px; }
     </style>
@@ -140,22 +161,100 @@
         </div>
     </div>
 
-    <!-- 1. 7 SAMPLE VIDEOS -->
+    <!-- 1. FEATURED 16:9 VIDEO + 7 VERTICAL REELS WITH VOLUME & PLAY/PAUSE CONTROLS -->
     <div class="container">
-        <h2 class="section-title">Our AI UGC Portfolio (7 Samples)</h2>
-        <p class="section-desc">Realistic lip-sync, natural voice aur scroll-stopping hooks</p>
+        <h2 class="section-title">Featured Widescreen Showcase (16:9)</h2>
+        <p class="section-desc">YouTube, Website & Commercial Master Ad Sample</p>
+        
+        <div class="featured-16-9 card-3d">
+            <video id="vidMain" src="featured16x9.mp4" playsinline></video>
+            <div class="vid-controls">
+                <button class="v-btn" onclick="togglePlay('vidMain', this)">▶ Play</button>
+                <div style="display:flex; align-items:center; gap:6px;">
+                    <button class="v-btn" onclick="toggleMute('vidMain', this)">🔊</button>
+                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('vidMain', this.value)">
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top:35px;">AI UGC Vertical Reels (7 Samples)</h2>
+        <p class="section-desc">Play/Pause aur Volume control ke saath samples dekhein</p>
+        
         <div class="video-grid">
-            <div class="video-card card-3d"><video src="video1.mp4" controls playsinline></video><div class="video-tag">Sample #1</div><div class="video-sub">E-Commerce Ad</div></div>
-            <div class="video-card card-3d"><video src="video2.mp4" controls playsinline></video><div class="video-tag">Sample #2</div><div class="video-sub">Real Estate Tour</div></div>
-            <div class="video-card card-3d"><video src="video3.mp4" controls playsinline></video><div class="video-tag">Sample #3</div><div class="video-sub">Skincare Review</div></div>
-            <div class="video-card card-3d"><video src="video4.mp4" controls playsinline></video><div class="video-tag">Sample #4</div><div class="video-sub">App / Service Promo</div></div>
-            <div class="video-card card-3d"><video src="video5.mp4" controls playsinline></video><div class="video-tag">Sample #5</div><div class="video-sub">Fitness & Health</div></div>
-            <div class="video-card card-3d"><video src="video6.mp4" controls playsinline></video><div class="video-tag">Sample #6</div><div class="video-sub">Fashion & Lifestyle</div></div>
-            <div class="video-card card-3d"><video src="video7.mp4" controls playsinline></video><div class="video-tag">Sample #7</div><div class="video-sub">Local Business Ad</div></div>
+            <!-- VIDEO 1 -->
+            <div class="video-card card-3d">
+                <video id="v1" src="video1.mp4" playsinline></video>
+                <div class="vid-controls">
+                    <button class="v-btn" onclick="togglePlay('v1', this)">▶</button>
+                    <button class="v-btn" onclick="toggleMute('v1', this)">🔊</button>
+                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v1', this.value)">
+                </div>
+                <div class="video-tag">Sample #1</div><div class="video-sub">E-Commerce Ad</div>
+            </div>
+            <!-- VIDEO 2 -->
+            <div class="video-card card-3d">
+                <video id="v2" src="video2.mp4" playsinline></video>
+                <div class="vid-controls">
+                    <button class="v-btn" onclick="togglePlay('v2', this)">▶</button>
+                    <button class="v-btn" onclick="toggleMute('v2', this)">🔊</button>
+                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v2', this.value)">
+                </div>
+                <div class="video-tag">Sample #2</div><div class="video-sub">Real Estate Tour</div>
+            </div>
+            <!-- VIDEO 3 -->
+            <div class="video-card card-3d">
+                <video id="v3" src="video3.mp4" playsinline></video>
+                <div class="vid-controls">
+                    <button class="v-btn" onclick="togglePlay('v3', this)">▶</button>
+                    <button class="v-btn" onclick="toggleMute('v3', this)">🔊</button>
+                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v3', this.value)">
+                </div>
+                <div class="video-tag">Sample #3</div><div class="video-sub">Skincare Review</div>
+            </div>
+            <!-- VIDEO 4 -->
+            <div class="video-card card-3d">
+                <video id="v4" src="video4.mp4" playsinline></video>
+                <div class="vid-controls">
+                    <button class="v-btn" onclick="togglePlay('v4', this)">▶</button>
+                    <button class="v-btn" onclick="toggleMute('v4', this)">🔊</button>
+                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v4', this.value)">
+                </div>
+                <div class="video-tag">Sample #4</div><div class="video-sub">App / Service Promo</div>
+            </div>
+            <!-- VIDEO 5 -->
+            <div class="video-card card-3d">
+                <video id="v5" src="video5.mp4" playsinline></video>
+                <div class="vid-controls">
+                    <button class="v-btn" onclick="togglePlay('v5', this)">▶</button>
+                    <button class="v-btn" onclick="toggleMute('v5', this)">🔊</button>
+                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v5', this.value)">
+                </div>
+                <div class="video-tag">Sample #5</div><div class="video-sub">Fitness & Health</div>
+            </div>
+            <!-- VIDEO 6 -->
+            <div class="video-card card-3d">
+                <video id="v6" src="video6.mp4" playsinline></video>
+                <div class="vid-controls">
+                    <button class="v-btn" onclick="togglePlay('v6', this)">▶</button>
+                    <button class="v-btn" onclick="toggleMute('v6', this)">🔊</button>
+                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v6', this.value)">
+                </div>
+                <div class="video-tag">Sample #6</div><div class="video-sub">Fashion & Lifestyle</div>
+            </div>
+            <!-- VIDEO 7 -->
+            <div class="video-card card-3d">
+                <video id="v7" src="video7.mp4" playsinline></video>
+                <div class="vid-controls">
+                    <button class="v-btn" onclick="togglePlay('v7', this)">▶</button>
+                    <button class="v-btn" onclick="toggleMute('v7', this)">🔊</button>
+                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v7', this.value)">
+                </div>
+                <div class="video-tag">Sample #7</div><div class="video-sub">Local Business Ad</div>
+            </div>
         </div>
     </div>
 
-    <!-- 2. SELECTABLE AI CHARACTERS -->
+    <!-- 2. SELECTABLE AI CHARACTERS (6 MEN + 6 GIRLS + 6 BUSINESS) -->
     <div class="container" id="characters">
         <h2 class="section-title">Tap to Select Your AI Character</h2>
         <p class="section-desc">Kisi bhi character par click karein — woh aapke package mein automatically add ho jayega</p>
@@ -293,22 +392,31 @@
         </div>
     </div>
 
-    <!-- 5. CLIENT FEEDBACK -->
+    <!-- 5. CLIENT FEEDBACK WITH INTERACTIVE 1-5 STAR PICKER -->
     <div class="container">
-        <h2 class="section-title">Client Reviews & Share Your Response</h2>
-        <p class="section-desc">Apna feedback ya experience yahan share karein</p>
+        <h2 class="section-title">Client Reviews & Rate Our Work</h2>
+        <p class="section-desc">Stars select karein aur apna review share karein</p>
         <div class="feedback-box card-3d">
+            <div style="font-size:13px; color:#94a3b8; margin-bottom:4px;">Select Rating (1 to 5 Stars):</div>
+            <div class="star-picker" id="starPicker">
+                <span class="active-star" onclick="setRating(1)">★</span>
+                <span class="active-star" onclick="setRating(2)">★</span>
+                <span class="active-star" onclick="setRating(3)">★</span>
+                <span class="active-star" onclick="setRating(4)">★</span>
+                <span class="active-star" onclick="setRating(5)">★</span>
+            </div>
+
             <input type="text" id="revName" class="text-input" placeholder="Aapka Naam / Business Name">
             <textarea id="revMsg" class="text-input" rows="2" placeholder="Apna review ya message likhein..."></textarea>
             <button class="btn btn-call" style="width:100%; justify-content:center;" onclick="addReview()">💬 Submit Response</button>
 
             <div class="review-list" id="reviewList">
                 <div class="review-item">
-                    <div class="review-author">★★★★★ Rahul Sharma (E-Commerce Owner)</div>
+                    <div class="review-author">★★★★★ <span>Rahul Sharma (E-Commerce Owner)</span></div>
                     <div class="review-text">Bahut hi realistic AI videos banaye hain, hamare Facebook ads ki cost half ho gayi!</div>
                 </div>
                 <div class="review-item">
-                    <div class="review-author">★★★★★ Amit Real Estate Jaipur</div>
+                    <div class="review-author">★★★★★ <span>Amit Real Estate Jaipur</span></div>
                     <div class="review-text">24 ghante mein property walkthrough video mil gaya, super fast service.</div>
                 </div>
             </div>
@@ -323,12 +431,40 @@
 
     <script>
         let chosenCharacter = "Men #1 - Aarav (Tech/Fitness)";
+        let selectedStars = 5;
 
+        // Custom Video Play/Pause & Volume Controls
+        function togglePlay(vidId, btn) {
+            const v = document.getElementById(vidId);
+            if (v.paused) {
+                document.querySelectorAll('video').forEach(other => {
+                    if (other.id !== vidId) other.pause();
+                });
+                v.play();
+                btn.innerText = "⏸";
+            } else {
+                v.pause();
+                btn.innerText = "▶";
+            }
+        }
+
+        function toggleMute(vidId, btn) {
+            const v = document.getElementById(vidId);
+            v.muted = !v.muted;
+            btn.innerText = v.muted ? "🔇" : "🔊";
+        }
+
+        function changeVol(vidId, val) {
+            const v = document.getElementById(vidId);
+            v.volume = val;
+            v.muted = (val == 0);
+        }
+
+        // 3D Phone Tilt Movement
         window.addEventListener('deviceorientation', function(event) {
             const gamma = event.gamma || 0;
             const beta = event.beta || 0;
-            const orbs = document.querySelectorAll('.ai-orb');
-            orbs.forEach(orb => {
+            document.querySelectorAll('.ai-orb').forEach(orb => {
                 const speed = parseFloat(orb.getAttribute('data-speed')) || 20;
                 const x = (gamma / 45) * speed;
                 const y = ((beta - 45) / 45) * speed;
@@ -336,6 +472,7 @@
             });
         });
 
+        // Live Inquiry Counter
         let baseInquiry = 5482;
         setInterval(() => {
             if (baseInquiry < 5990) {
@@ -344,6 +481,7 @@
             }
         }, 6500);
 
+        // Filter Characters
         function filterAvatars(category, btn) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -352,6 +490,7 @@
             });
         }
 
+        // Pick Character
         function pickCharacter(cardElement, charName) {
             document.querySelectorAll('.avatar-card').forEach(c => c.classList.remove('selected-char'));
             cardElement.classList.add('selected-char');
@@ -359,12 +498,14 @@
             document.getElementById('chosenCharText').innerText = charName;
         }
 
+        // Select Monthly Offer
         function selectMonthlyOffer(offerId) {
             document.querySelectorAll('.srv').forEach(box => box.checked = false);
             document.getElementById(offerId).checked = true;
             calculateTotal();
         }
 
+        // Calculate Total
         function calculateTotal() {
             let total = 0;
             document.querySelectorAll('.srv:checked').forEach((box) => {
@@ -373,6 +514,7 @@
             document.getElementById('totalPrice').innerText = total.toLocaleString('en-IN');
         }
 
+        // Direct WhatsApp App Protocol (No browser popup)
         function bookNow() {
             const myWhatsAppNumber = "917597145560";
             const name = document.getElementById('clientName').value.trim();
@@ -401,8 +543,22 @@
                             `*💰 Total Estimated Price:* ₹${total}\n` +
                             `*📝 Note:* ${note}`;
 
-            const cleanUrl = `https://wa.me/${myWhatsAppNumber}?text=${encodeURIComponent(message)}`;
-            window.location.assign(cleanUrl);
+            const encoded = encodeURIComponent(message);
+            // Direct WhatsApp App URI
+            window.location.href = `whatsapp://send?phone=${myWhatsAppNumber}&text=${encoded}`;
+        }
+
+        // Interactive 1 to 5 Star Rating
+        function setRating(count) {
+            selectedStars = count;
+            const stars = document.querySelectorAll('#starPicker span');
+            stars.forEach((s, idx) => {
+                if (idx < count) {
+                    s.classList.add('active-star');
+                } else {
+                    s.classList.remove('active-star');
+                }
+            });
         }
 
         function addReview() {
@@ -412,15 +568,17 @@
                 alert("Kripya apna naam aur message dono likhein!");
                 return;
             }
+            const starStr = "★".repeat(selectedStars) + "☆".repeat(5 - selectedStars);
             const list = document.getElementById('reviewList');
             const newItem = document.createElement('div');
             newItem.className = 'review-item';
-            newItem.innerHTML = `<div class="review-author">★★★★★ ${rName} (Just Now)</div><div class="review-text">${rMsg}</div>`;
+            newItem.innerHTML = `<div class="review-author">${starStr} <span>${rName} (Just Now)</span></div><div class="review-text">${rMsg}</div>`;
             list.prepend(newItem);
             document.getElementById('revName').value = '';
             document.getElementById('revMsg').value = '';
         }
 
+        // Security Protection
         document.addEventListener('keydown', function(e) {
             if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'u')) {
                 e.preventDefault();
