@@ -499,7 +499,7 @@
                 box.classList.remove('wide-modal');
             }
 
-            area.innerHTML = `<video id="activeModalVid" src="${videoSrc}" autoplay loop playsinline></video>`;
+            area.innerHTML = `<video id="activeModalVid" src="${videoSrc}" autoplay loop playsinline webkit-playsinline controls></video>`;
             document.getElementById('popupTitle').innerText = title;
             document.getElementById('popupPlayBtn').innerText = "⏸ Pause";
             ctrls.style.display = "flex";
