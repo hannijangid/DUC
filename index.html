@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>3D AI UGC & Creative Studio</title>
+    <title>VibeCut AI & Video Editing Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; -webkit-user-select: none; user-select: none; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-user-select: none; user-select: none; }
+        h1, h2, h3, .brand-title, .total-amount, .trust-num { font-family: 'Outfit', sans-serif; }
         input, textarea { -webkit-user-select: text; user-select: text; }
         body { background-color: #050811; color: #f8fafc; line-height: 1.5; padding-bottom: 85px; overflow-x: hidden; }
         
-        /* HERO SECTION WITH 3D TILT ELEMENTS */
-        header { position: relative; text-align: center; padding: 55px 18px 45px; background: radial-gradient(circle at top, #172554 0%, #050811 75%); border-bottom: 1px solid rgba(56, 189, 248, 0.25); overflow: hidden; }
+        /* HERO SECTION */
+        header { position: relative; text-align: center; padding: 55px 18px 45px; background: radial-gradient(circle at top, #172554 0%, #050811 78%); border-bottom: 1px solid rgba(56, 189, 248, 0.25); overflow: hidden; }
         
         .ai-3d-stage { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
-        .ai-orb { position: absolute; border-radius: 24px; background: linear-gradient(135deg, rgba(56,189,248,0.22), rgba(168,85,247,0.18)); border: 1px solid rgba(56,189,248,0.45); box-shadow: 0 10px 30px rgba(56,189,248,0.25), inset 0 0 15px rgba(255,255,255,0.15); backdrop-filter: blur(4px); transition: transform 0.12s ease-out; display: flex; align-items: center; justify-content: center; font-size: 22px; }
-        .orb-1 { width: 65px; height: 65px; top: 18px; left: 8%; transform: rotate(15deg); }
-        .orb-2 { width: 55px; height: 55px; top: 25px; right: 10%; border-radius: 50%; transform: rotate(-15deg); }
-        .orb-3 { width: 50px; height: 50px; bottom: 20px; left: 12%; transform: rotate(25deg); }
-        .orb-4 { width: 60px; height: 60px; bottom: 22px; right: 8%; border-radius: 16px; transform: rotate(-20deg); }
+        .ai-orb { position: absolute; border-radius: 24px; background: linear-gradient(135deg, rgba(56,189,248,0.2), rgba(168,85,247,0.16)); border: 1px solid rgba(56,189,248,0.4); box-shadow: 0 10px 30px rgba(56,189,248,0.2); backdrop-filter: blur(4px); transition: transform 0.12s ease-out; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+        .orb-1 { width: 62px; height: 62px; top: 18px; left: 7%; transform: rotate(15deg); }
+        .orb-2 { width: 52px; height: 52px; top: 24px; right: 9%; border-radius: 50%; transform: rotate(-15deg); }
+        .orb-3 { width: 48px; height: 48px; bottom: 20px; left: 10%; transform: rotate(25deg); }
+        .orb-4 { width: 58px; height: 58px; bottom: 22px; right: 7%; border-radius: 16px; transform: rotate(-20deg); }
 
-        .hero-content { position: relative; z-index: 2; }
-        .badge { background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 6px 16px; border-radius: 30px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 14px; border: 1px solid rgba(56, 189, 248, 0.45); box-shadow: 0 0 15px rgba(56, 189, 248, 0.25); }
-        h1 { font-size: 30px; margin-bottom: 12px; line-height: 1.25; }
-        h1 span { background: linear-gradient(90deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+        .brand-title { font-size: 36px; font-weight: 800; letter-spacing: 0.5px; background: linear-gradient(90deg, #ffffff, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+        .badge { background: rgba(56, 189, 248, 0.14); color: #38bdf8; padding: 6px 16px; border-radius: 30px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 16px; border: 1px solid rgba(56, 189, 248, 0.4); }
+        h1 { font-size: 27px; margin-bottom: 12px; line-height: 1.25; color: #f1f5f9; }
+        h1 span { color: #38bdf8; }
         p.subtitle { color: #94a3b8; max-width: 600px; margin: 0 auto 24px; font-size: 14px; }
         
         .cta-group { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
@@ -30,9 +33,15 @@
         .btn-call { background: linear-gradient(135deg, #38bdf8, #0284c7); color: #050811; box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35); }
         .btn-whatsapp { background: linear-gradient(135deg, #22c55e, #16a34a); color: #ffffff; box-shadow: 0 6px 20px rgba(34, 197, 94, 0.35); }
 
+        /* DUAL SERVICE PILLAR BANNER */
+        .dual-services { max-width: 900px; margin: 22px auto 0; padding: 0 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+        .dual-card { background: linear-gradient(145deg, #111827, #0b101d); border: 1px solid rgba(168, 85, 247, 0.35); padding: 16px; border-radius: 14px; text-align: left; }
+        .dual-card h3 { font-size: 16px; color: #38bdf8; margin-bottom: 4px; }
+        .dual-card p { font-size: 12.5px; color: #cbd5e1; }
+
         /* TRUST BAR */
-        .trust-bar { max-width: 900px; margin: 20px auto 0; padding: 0 15px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; }
-        .trust-box { background: linear-gradient(145deg, #111827, #0b101d); border: 1px solid rgba(56, 189, 248, 0.25); padding: 14px 8px; border-radius: 14px; }
+        .trust-bar { max-width: 900px; margin: 16px auto 0; padding: 0 15px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; }
+        .trust-box { background: linear-gradient(145deg, #111827, #0b101d); border: 1px solid rgba(56, 189, 248, 0.25); padding: 13px 8px; border-radius: 14px; }
         .trust-num { font-size: 20px; font-weight: 800; color: #38bdf8; }
         .trust-label { font-size: 11px; color: #94a3b8; margin-top: 2px; }
         .live-dot { display: inline-block; width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-right: 4px; animation: pulse 1.2s infinite; }
@@ -44,36 +53,50 @@
         .section-desc { text-align: center; color: #94a3b8; margin-bottom: 22px; font-size: 13px; }
         .card-3d { background: linear-gradient(145deg, #111827, #0a0f1c); border: 1px solid rgba(56, 189, 248, 0.22); border-radius: 14px; box-shadow: 0 10px 25px rgba(0,0,0,0.6); transition: 0.25s; }
 
-        /* FEATURED 16:9 WIDESCREEN VIDEO */
-        .featured-16-9 { max-width: 820px; margin: 0 auto 28px; padding: 12px; border: 2px solid #38bdf8; }
-        .featured-16-9 video { width: 100%; aspect-ratio: 16/9; border-radius: 10px; background: #000; object-fit: cover; display: block; }
+        /* AUTOPLAY SILENT VIDEO CARDS (TAP TO EXPAND WITH SOUND) */
+        .video-wrapper { position: relative; cursor: pointer; border-radius: 10px; overflow: hidden; background: #000; border: 1px solid #1e293b; }
+        .tap-sound-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(5, 8, 17, 0.8); color: #38bdf8; font-size: 10px; font-weight: 700; padding: 4px 8px; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.4); pointer-events: none; }
 
-        /* CUSTOM VIDEO CONTROLS (PLAY/PAUSE + MUTE + VOLUME) */
-        .vid-controls { display: flex; align-items: center; justify-content: space-between; gap: 6px; background: #090e1a; padding: 6px 8px; border-radius: 8px; margin-top: 6px; border: 1px solid #1e293b; }
-        .v-btn { background: #1e293b; color: #38bdf8; border: none; border-radius: 6px; padding: 4px 8px; font-size: 11px; font-weight: 700; cursor: pointer; }
-        .v-btn:hover { background: #38bdf8; color: #050811; }
-        .vol-slider { width: 55px; accent-color: #38bdf8; cursor: pointer; height: 4px; }
+        .featured-16-9 { max-width: 820px; margin: 0 auto 28px; padding: 12px; border: 2px solid #38bdf8; }
+        .featured-16-9 video { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+        .feat-caption { margin-top: 10px; text-align: center; }
+        .feat-caption h3 { font-size: 16px; color: #f8fafc; }
+        .feat-caption p { font-size: 12px; color: #38bdf8; }
 
         /* 7 VERTICAL VIDEOS GRID */
         .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 12px; }
         .video-card { padding: 8px; text-align: center; }
-        .video-card video { width: 100%; height: 225px; border-radius: 10px; background: #000; object-fit: cover; border: 1px solid #1e293b; display: block; }
-        .video-tag { margin-top: 6px; font-weight: 700; font-size: 13px; }
-        .video-sub { font-size: 11px; color: #38bdf8; }
+        .video-card video { width: 100%; height: 225px; object-fit: cover; display: block; }
+        .video-tag { margin-top: 8px; font-weight: 700; font-size: 13px; color: #f8fafc; }
+        .video-sub { font-size: 11px; color: #38bdf8; margin-top: 2px; line-height: 1.35; }
 
-        /* CHARACTER FILTER TABS & SELECTABLE AVATARS */
+        /* CHARACTER FILTER TABS & SELECTABLE + ZOOMABLE AVATARS */
         .filter-tabs { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
         .tab-btn { background: #111827; color: #94a3b8; border: 1px solid #1e293b; padding: 7px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; }
         .tab-btn.active { background: #38bdf8; color: #050811; border-color: #38bdf8; }
 
         .avatar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
         .avatar-card { padding: 8px; text-align: center; cursor: pointer; position: relative; }
-        .avatar-card.selected-char { border: 2px solid #22c55e; box-shadow: 0 0 18px rgba(34, 197, 94, 0.45); transform: scale(1.02); }
-        .select-badge { position: absolute; top: 14px; right: 14px; background: #22c55e; color: #fff; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 10px; display: none; }
+        .avatar-card.selected-char { border: 2px solid #22c55e; box-shadow: 0 0 18px rgba(34, 197, 94, 0.45); }
+        .select-badge { position: absolute; top: 14px; right: 14px; background: #22c55e; color: #fff; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 10px; display: none; z-index: 2; }
         .avatar-card.selected-char .select-badge { display: block; }
+        .zoom-hint { position: absolute; top: 14px; left: 14px; background: rgba(5,8,17,0.75); color: #fff; font-size: 10px; padding: 2px 6px; border-radius: 6px; }
         .avatar-card img { width: 100%; height: 165px; object-fit: cover; border-radius: 10px; background: #1e293b; margin-bottom: 7px; }
         .avatar-name { font-weight: 700; font-size: 13px; color: #f8fafc; }
         .avatar-role { font-size: 11px; color: #38bdf8; }
+
+        /* POPUP LIGHTBOX MODAL (FOR VIDEO WITH SOUND & ZOOMED AVATAR) */
+        .popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 14, 0.88); backdrop-filter: blur(8px); z-index: 999; display: none; align-items: center; justify-content: center; padding: 22px; }
+        .popup-box { position: relative; background: #0f172a; border: 2px solid #38bdf8; border-radius: 18px; padding: 14px; max-width: 420px; width: 100%; box-shadow: 0 25px 60px rgba(0,0,0,0.9); animation: popUp 0.22s ease-out; text-align: center; }
+        .popup-box.wide-modal { max-width: 780px; }
+        @keyframes popUp { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        
+        .popup-back-btn { position: absolute; top: 12px; left: 12px; z-index: 10; background: rgba(15, 23, 42, 0.9); color: #fff; border: 1px solid #38bdf8; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; }
+        .popup-box video { width: 100%; max-height: 68vh; border-radius: 12px; background: #000; display: block; }
+        .popup-box img { width: 100%; max-height: 65vh; object-fit: contain; border-radius: 12px; background: #050811; display: block; }
+        .popup-controls { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 12px; }
+        .p-ctrl-btn { background: #38bdf8; color: #050811; border: none; padding: 8px 18px; border-radius: 10px; font-weight: 800; font-size: 13px; cursor: pointer; }
+        .popup-title { margin-top: 10px; font-size: 15px; font-weight: 700; color: #f8fafc; }
 
         /* MONTHLY OFFER PACKAGES */
         .offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
@@ -131,19 +154,32 @@
             <div class="ai-orb orb-1" data-speed="25">🤖</div>
             <div class="ai-orb orb-2" data-speed="-30">🎬</div>
             <div class="ai-orb orb-3" data-speed="20">⚡</div>
-            <div class="ai-orb orb-4" data-speed="-25">🎙️</div>
+            <div class="ai-orb orb-4" data-speed="-25">✂️</div>
         </div>
 
         <div class="hero-content">
-            <div class="badge">⚡ 3D NEXT-GEN AI UGC STUDIO</div>
-            <h1>High-Converting <span>AI UGC Videos</span> For Your Business</h1>
-            <p class="subtitle">Apna pasandida AI Character select karein, Monthly Offer ya Custom Package banayein aur seedha WhatsApp par order book karein.</p>
+            <div class="brand-title">VibeCut AI Studio</div>
+            <div class="badge">⚡ AI UGC CREATION + PRO RAW VIDEO EDITING</div>
+            <h1>High-Converting <span>AI UGC Videos</span> & <span>Pro Raw Clip Edits</span></h1>
+            <p class="subtitle">Chahe aapko photorealistic AI Avatars se ads banwane hon, ya apni khud ki Raw Clips bhej kar high-retention Reels aur Commercials edit karwane hon — sab kuch ek hi jagah.</p>
             <div class="cta-group">
                 <a href="tel:+917597145560" class="btn btn-call">📞 Direct Call Now</a>
                 <a href="#builder" class="btn btn-whatsapp">⚡ Select Package & Book</a>
             </div>
         </div>
     </header>
+
+    <!-- DUAL SERVICES HIGHLIGHT (AI UGC + RAW CLIPS EDITING) -->
+    <div class="dual-services">
+        <div class="dual-card">
+            <h3>🤖 1. Photorealistic AI UGC Ads</h3>
+            <p>Bina shoot aur models ke, ultra-realistic skin texture aur natural voice ke saath brand ads aur product marketing videos banwayein.</p>
+        </div>
+        <div class="dual-card">
+            <h3>✂️ 2. Raw Clips to Pro Video Editing</h3>
+            <p>Apne phone ya camera se shoot ki hui raw clips humein bhejein — hum B-rolls, captions, transitions aur sound effects lagakar viral edit denge.</p>
+        </div>
+    </div>
 
     <!-- LIVE INQUIRY COUNTER -->
     <div class="trust-bar">
@@ -161,103 +197,102 @@
         </div>
     </div>
 
-    <!-- 1. FEATURED 16:9 VIDEO + 7 VERTICAL REELS WITH VOLUME & PLAY/PAUSE CONTROLS -->
+    <!-- 1. FEATURED 16:9 VIDEO + 7 VERTICAL REELS (AUTOPLAY MUTED -> TAP TO OPEN WITH SOUND) -->
     <div class="container">
-        <h2 class="section-title">Featured Widescreen Showcase (16:9)</h2>
-        <p class="section-desc">YouTube, Website & Commercial Master Ad Sample</p>
+        <h2 class="section-title">Client Raw Clips Transformation (16:9)</h2>
+        <p class="section-desc">Video par click karein — yeh screen par upar uth kar full sound ke saath chalega</p>
         
-        <div class="featured-16-9 card-3d">
-            <video id="vidMain" src="featured16x9.mp4" playsinline></video>
-            <div class="vid-controls">
-                <button class="v-btn" onclick="togglePlay('vidMain', this)">▶ Play</button>
-                <div style="display:flex; align-items:center; gap:6px;">
-                    <button class="v-btn" onclick="toggleMute('vidMain', this)">🔊</button>
-                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('vidMain', this.value)">
-                </div>
+        <div class="featured-16-9 card-3d" onclick="openVideoModal('featured16x9.mp4', 'Client Raw Clips → Pro Commercial Edit (16:9)', true)">
+            <div class="video-wrapper">
+                <video src="featured16x9.mp4" autoplay loop muted playsinline></video>
+                <span class="tap-sound-badge">🔊 Tap for Sound</span>
+            </div>
+            <div class="feat-caption">
+                <h3>Raw Footage to High-Retention Commercial Edit</h3>
+                <p>Client ne apni raw clips bheji thi — humne B-rolls, color grading aur pro cuts se ready ad banaya</p>
             </div>
         </div>
 
-        <h2 class="section-title" style="margin-top:35px;">AI UGC Vertical Reels (7 Samples)</h2>
-        <p class="section-desc">Play/Pause aur Volume control ke saath samples dekhein</p>
+        <h2 class="section-title" style="margin-top:38px;">Our Work Showcase (9:16 Reels)</h2>
+        <p class="section-desc">Kisi bhi reel par tap karein sound aur controls ke saath dekhne ke liye</p>
         
         <div class="video-grid">
             <!-- VIDEO 1 -->
-            <div class="video-card card-3d">
-                <video id="v1" src="video1.mp4" playsinline></video>
-                <div class="vid-controls">
-                    <button class="v-btn" onclick="togglePlay('v1', this)">▶</button>
-                    <button class="v-btn" onclick="toggleMute('v1', this)">🔊</button>
-                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v1', this.value)">
+            <div class="video-card card-3d" onclick="openVideoModal('video1.mp4', 'Photorealistic AI Skin & Natural Look', false)">
+                <div class="video-wrapper">
+                    <video src="video1.mp4" autoplay loop muted playsinline></video>
+                    <span class="tap-sound-badge">🔊 Tap</span>
                 </div>
-                <div class="video-tag">Sample #1</div><div class="video-sub">E-Commerce Ad</div>
+                <div class="video-tag">Photorealistic AI Skin</div>
+                <div class="video-sub">Natural skin texture & real human expressions</div>
             </div>
+
             <!-- VIDEO 2 -->
-            <div class="video-card card-3d">
-                <video id="v2" src="video2.mp4" playsinline></video>
-                <div class="vid-controls">
-                    <button class="v-btn" onclick="togglePlay('v2', this)">▶</button>
-                    <button class="v-btn" onclick="toggleMute('v2', this)">🔊</button>
-                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v2', this.value)">
+            <div class="video-card card-3d" onclick="openVideoModal('video2.mp4', 'Raw Clips to Pro Edited Reel', false)">
+                <div class="video-wrapper">
+                    <video src="video2.mp4" autoplay loop muted playsinline></video>
+                    <span class="tap-sound-badge">🔊 Tap</span>
                 </div>
-                <div class="video-tag">Sample #2</div><div class="video-sub">Real Estate Tour</div>
+                <div class="video-tag">Raw Clips Editing</div>
+                <div class="video-sub">Client raw clips transformed into viral reel</div>
             </div>
+
             <!-- VIDEO 3 -->
-            <div class="video-card card-3d">
-                <video id="v3" src="video3.mp4" playsinline></video>
-                <div class="vid-controls">
-                    <button class="v-btn" onclick="togglePlay('v3', this)">▶</button>
-                    <button class="v-btn" onclick="toggleMute('v3', this)">🔊</button>
-                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v3', this.value)">
+            <div class="video-card card-3d" onclick="openVideoModal('video3.mp4', 'AI Product Marketing Video', false)">
+                <div class="video-wrapper">
+                    <video src="video3.mp4" autoplay loop muted playsinline></video>
+                    <span class="tap-sound-badge">🔊 Tap</span>
                 </div>
-                <div class="video-tag">Sample #3</div><div class="video-sub">Skincare Review</div>
+                <div class="video-tag">AI Product Marketing</div>
+                <div class="video-sub">AI-generated commercial ad for products</div>
             </div>
+
             <!-- VIDEO 4 -->
-            <div class="video-card card-3d">
-                <video id="v4" src="video4.mp4" playsinline></video>
-                <div class="vid-controls">
-                    <button class="v-btn" onclick="togglePlay('v4', this)">▶</button>
-                    <button class="v-btn" onclick="toggleMute('v4', this)">🔊</button>
-                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v4', this.value)">
+            <div class="video-card card-3d" onclick="openVideoModal('video4.mp4', 'Pro B-Roll & Motion Editing', false)">
+                <div class="video-wrapper">
+                    <video src="video4.mp4" autoplay loop muted playsinline></video>
+                    <span class="tap-sound-badge">🔊 Tap</span>
                 </div>
-                <div class="video-tag">Sample #4</div><div class="video-sub">App / Service Promo</div>
+                <div class="video-tag">Pro B-Roll Editing</div>
+                <div class="video-sub">High-retention edit with dynamic B-rolls</div>
             </div>
+
             <!-- VIDEO 5 -->
-            <div class="video-card card-3d">
-                <video id="v5" src="video5.mp4" playsinline></video>
-                <div class="vid-controls">
-                    <button class="v-btn" onclick="togglePlay('v5', this)">▶</button>
-                    <button class="v-btn" onclick="toggleMute('v5', this)">🔊</button>
-                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v5', this.value)">
+            <div class="video-card card-3d" onclick="openVideoModal('video5.mp4', 'Sample #5 - Brand Promo', false)">
+                <div class="video-wrapper">
+                    <video src="video5.mp4" autoplay loop muted playsinline></video>
+                    <span class="tap-sound-badge">🔊 Tap</span>
                 </div>
-                <div class="video-tag">Sample #5</div><div class="video-sub">Fitness & Health</div>
+                <div class="video-tag">Sample #5</div>
+                <div class="video-sub">Fitness & Lifestyle Ad</div>
             </div>
+
             <!-- VIDEO 6 -->
-            <div class="video-card card-3d">
-                <video id="v6" src="video6.mp4" playsinline></video>
-                <div class="vid-controls">
-                    <button class="v-btn" onclick="togglePlay('v6', this)">▶</button>
-                    <button class="v-btn" onclick="toggleMute('v6', this)">🔊</button>
-                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v6', this.value)">
+            <div class="video-card card-3d" onclick="openVideoModal('video6.mp4', 'Sample #6 - E-Commerce Ad', false)">
+                <div class="video-wrapper">
+                    <video src="video6.mp4" autoplay loop muted playsinline></video>
+                    <span class="tap-sound-badge">🔊 Tap</span>
                 </div>
-                <div class="video-tag">Sample #6</div><div class="video-sub">Fashion & Lifestyle</div>
+                <div class="video-tag">Sample #6</div>
+                <div class="video-sub">Scroll-Stopping Hook</div>
             </div>
+
             <!-- VIDEO 7 -->
-            <div class="video-card card-3d">
-                <video id="v7" src="video7.mp4" playsinline></video>
-                <div class="vid-controls">
-                    <button class="v-btn" onclick="togglePlay('v7', this)">▶</button>
-                    <button class="v-btn" onclick="toggleMute('v7', this)">🔊</button>
-                    <input type="range" class="vol-slider" min="0" max="1" step="0.1" value="1" oninput="changeVol('v7', this.value)">
+            <div class="video-card card-3d" onclick="openVideoModal('video7.mp4', 'Sample #7 - Local Business Ad', false)">
+                <div class="video-wrapper">
+                    <video src="video7.mp4" autoplay loop muted playsinline></video>
+                    <span class="tap-sound-badge">🔊 Tap</span>
                 </div>
-                <div class="video-tag">Sample #7</div><div class="video-sub">Local Business Ad</div>
+                <div class="video-tag">Sample #7</div>
+                <div class="video-sub">Lead Generation Video</div>
             </div>
         </div>
     </div>
 
-    <!-- 2. SELECTABLE AI CHARACTERS (6 MEN + 6 GIRLS + 6 BUSINESS) -->
+    <!-- 2. SELECTABLE & ZOOMABLE AI CHARACTERS -->
     <div class="container" id="characters">
-        <h2 class="section-title">Tap to Select Your AI Character</h2>
-        <p class="section-desc">Kisi bhi character par click karein — woh aapke package mein automatically add ho jayega</p>
+        <h2 class="section-title">Tap to Zoom & Select AI Character</h2>
+        <p class="section-desc">Photo par click karein — character zoom hokar dikhega aur aapke package mein select ho jayega</p>
         
         <div class="filter-tabs">
             <button class="tab-btn active" onclick="filterAvatars('all', this)">All (18)</button>
@@ -268,28 +303,28 @@
 
         <div class="avatar-grid">
             <!-- 6 MEN -->
-            <div class="avatar-card card-3d selected-char" data-cat="men" onclick="pickCharacter(this, 'Men #1 - Aarav (Tech/Fitness)')"><span class="select-badge">✓ SELECTED</span><img src="men1.jpg" alt="Men 1"><div class="avatar-name">Men #1 - Aarav</div><div class="avatar-role">Tech & Fitness</div></div>
-            <div class="avatar-card card-3d" data-cat="men" onclick="pickCharacter(this, 'Men #2 - Kabir (Lifestyle)')"><span class="select-badge">✓ SELECTED</span><img src="men2.jpg" alt="Men 2"><div class="avatar-name">Men #2 - Kabir</div><div class="avatar-role">Casual & Lifestyle</div></div>
-            <div class="avatar-card card-3d" data-cat="men" onclick="pickCharacter(this, 'Men #3 - Rohan (Finance)')"><span class="select-badge">✓ SELECTED</span><img src="men3.jpg" alt="Men 3"><div class="avatar-name">Men #3 - Rohan</div><div class="avatar-role">Corporate & Finance</div></div>
-            <div class="avatar-card card-3d" data-cat="men" onclick="pickCharacter(this, 'Men #4 - Dev (Fashion)')"><span class="select-badge">✓ SELECTED</span><img src="men4.jpg" alt="Men 4"><div class="avatar-name">Men #4 - Dev</div><div class="avatar-role">Fashion & Grooming</div></div>
-            <div class="avatar-card card-3d" data-cat="men" onclick="pickCharacter(this, 'Men #5 - Aryan (Youth/Gaming)')"><span class="select-badge">✓ SELECTED</span><img src="men5.jpg" alt="Men 5"><div class="avatar-name">Men #5 - Aryan</div><div class="avatar-role">Youth & Gadgets</div></div>
-            <div class="avatar-card card-3d" data-cat="men" onclick="pickCharacter(this, 'Men #6 - Alex (Global English)')"><span class="select-badge">✓ SELECTED</span><img src="men6.jpg" alt="Men 6"><div class="avatar-name">Men #6 - Alex</div><div class="avatar-role">International Ads</div></div>
+            <div class="avatar-card card-3d selected-char" data-cat="men" onclick="pickAndZoomCharacter(this, 'Men #1 - Aarav (Tech/Fitness)', 'men1.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="men1.jpg" alt="Men 1"><div class="avatar-name">Men #1 - Aarav</div><div class="avatar-role">Tech & Fitness</div></div>
+            <div class="avatar-card card-3d" data-cat="men" onclick="pickAndZoomCharacter(this, 'Men #2 - Kabir (Lifestyle)', 'men2.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="men2.jpg" alt="Men 2"><div class="avatar-name">Men #2 - Kabir</div><div class="avatar-role">Casual & Lifestyle</div></div>
+            <div class="avatar-card card-3d" data-cat="men" onclick="pickAndZoomCharacter(this, 'Men #3 - Rohan (Finance)', 'men3.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="men3.jpg" alt="Men 3"><div class="avatar-name">Men #3 - Rohan</div><div class="avatar-role">Corporate & Finance</div></div>
+            <div class="avatar-card card-3d" data-cat="men" onclick="pickAndZoomCharacter(this, 'Men #4 - Dev (Fashion)', 'men4.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="men4.jpg" alt="Men 4"><div class="avatar-name">Men #4 - Dev</div><div class="avatar-role">Fashion & Grooming</div></div>
+            <div class="avatar-card card-3d" data-cat="men" onclick="pickAndZoomCharacter(this, 'Men #5 - Aryan (Youth/Gaming)', 'men5.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="men5.jpg" alt="Men 5"><div class="avatar-name">Men #5 - Aryan</div><div class="avatar-role">Youth & Gadgets</div></div>
+            <div class="avatar-card card-3d" data-cat="men" onclick="pickAndZoomCharacter(this, 'Men #6 - Alex (Global English)', 'men6.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="men6.jpg" alt="Men 6"><div class="avatar-name">Men #6 - Alex</div><div class="avatar-role">International Ads</div></div>
 
-            <!-- 6 GIRLS -->
-            <div class="avatar-card card-3d" data-cat="girls" onclick="pickCharacter(this, 'Girl #1 - Ananya (Skincare)')"><span class="select-badge">✓ SELECTED</span><img src="girl1.jpg" alt="Girl 1"><div class="avatar-name">Girl #1 - Ananya</div><div class="avatar-role">Skincare & Beauty</div></div>
-            <div class="avatar-card card-3d" data-cat="girls" onclick="pickCharacter(this, 'Girl #2 - Meera (Fashion)')"><span class="select-badge">✓ SELECTED</span><img src="girl2.jpg" alt="Girl 2"><div class="avatar-name">Girl #2 - Meera</div><div class="avatar-role">Fashion & E-Com</div></div>
-            <div class="avatar-card card-3d" data-cat="girls" onclick="pickCharacter(this, 'Girl #3 - Kiara (Lifestyle)')"><span class="select-badge">✓ SELECTED</span><img src="girl3.jpg" alt="Girl 3"><div class="avatar-name">Girl #3 - Kiara</div><div class="avatar-role">Daily Vlog Style</div></div>
-            <div class="avatar-card card-3d" data-cat="girls" onclick="pickCharacter(this, 'Girl #4 - Riya (Apps/Tech)')"><span class="select-badge">✓ SELECTED</span><img src="girl4.jpg" alt="Girl 4"><div class="avatar-name">Girl #4 - Riya</div><div class="avatar-role">App & Service Promo</div></div>
-            <div class="avatar-card card-3d" data-cat="girls" onclick="pickCharacter(this, 'Girl #5 - Naina (Wellness)')"><span class="select-badge">✓ SELECTED</span><img src="girl5.jpg" alt="Girl 5"><div class="avatar-name">Girl #5 - Naina</div><div class="avatar-role">Health & Nutrition</div></div>
-            <div class="avatar-card card-3d" data-cat="girls" onclick="pickCharacter(this, 'Girl #6 - Sophia (Global)')"><span class="select-badge">✓ SELECTED</span><img src="girl6.jpg" alt="Girl 6"><div class="avatar-name">Girl #6 - Sophia</div><div class="avatar-role">International Brands</div></div>
+            <!-- 6 GIRLS (Exact uploaded filenames preserved) -->
+            <div class="avatar-card card-3d" data-cat="girls" onclick="pickAndZoomCharacter(this, 'Girl #1 - Ananya (Skincare)', 'girl1.png')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="girl1.png" alt="Girl 1"><div class="avatar-name">Girl #1 - Ananya</div><div class="avatar-role">Skincare & Beauty</div></div>
+            <div class="avatar-card card-3d" data-cat="girls" onclick="pickAndZoomCharacter(this, 'Girl #2 - Meera (Fashion)', 'girl2.jpg.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="girl2.jpg.jpg" alt="Girl 2"><div class="avatar-name">Girl #2 - Meera</div><div class="avatar-role">Fashion & E-Com</div></div>
+            <div class="avatar-card card-3d" data-cat="girls" onclick="pickAndZoomCharacter(this, 'Girl #3 - Kiara (Lifestyle)', 'girl3.jpg.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="girl3.jpg.jpg" alt="Girl 3"><div class="avatar-name">Girl #3 - Kiara</div><div class="avatar-role">Daily Vlog Style</div></div>
+            <div class="avatar-card card-3d" data-cat="girls" onclick="pickAndZoomCharacter(this, 'Girl #4 - Riya (Apps/Tech)', 'girl4.jpg.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="girl4.jpg.jpg" alt="Girl 4"><div class="avatar-name">Girl #4 - Riya</div><div class="avatar-role">App & Service Promo</div></div>
+            <div class="avatar-card card-3d" data-cat="girls" onclick="pickAndZoomCharacter(this, 'Girl #5 - Naina (Wellness)', 'girl5.jpg.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="girl5.jpg.jpg" alt="Girl 5"><div class="avatar-name">Girl #5 - Naina</div><div class="avatar-role">Health & Nutrition</div></div>
+            <div class="avatar-card card-3d" data-cat="girls" onclick="pickAndZoomCharacter(this, 'Girl #6 - Sophia (Global)', 'girl6.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="girl6.jpg" alt="Girl 6"><div class="avatar-name">Girl #6 - Sophia</div><div class="avatar-role">International Brands</div></div>
 
             <!-- 6 BUSINESS -->
-            <div class="avatar-card card-3d" data-cat="business" onclick="pickCharacter(this, 'Biz #1 - Vikram (Real Estate)')"><span class="select-badge">✓ SELECTED</span><img src="biz1.jpg" alt="Biz 1"><div class="avatar-name">Biz #1 - Vikram</div><div class="avatar-role">Luxury Real Estate</div></div>
-            <div class="avatar-card card-3d" data-cat="business" onclick="pickCharacter(this, 'Biz #2 - Priya (Property Host)')"><span class="select-badge">✓ SELECTED</span><img src="biz2.jpg" alt="Biz 2"><div class="avatar-name">Biz #2 - Priya</div><div class="avatar-role">Property Walkthrough</div></div>
-            <div class="avatar-card card-3d" data-cat="business" onclick="pickCharacter(this, 'Biz #3 - Rajeev (Consultant)')"><span class="select-badge">✓ SELECTED</span><img src="biz3.jpg" alt="Biz 3"><div class="avatar-name">Biz #3 - Rajeev</div><div class="avatar-role">Business & B2B</div></div>
-            <div class="avatar-card card-3d" data-cat="business" onclick="pickCharacter(this, 'Biz #4 - Sneha (Anchor)')"><span class="select-badge">✓ SELECTED</span><img src="biz4.jpg" alt="Biz 4"><div class="avatar-name">Biz #4 - Sneha</div><div class="avatar-role">News & Explainer</div></div>
-            <div class="avatar-card card-3d" data-cat="business" onclick="pickCharacter(this, 'Biz #5 - Karan (Showroom)')"><span class="select-badge">✓ SELECTED</span><img src="biz5.jpg" alt="Biz 5"><div class="avatar-name">Biz #5 - Karan</div><div class="avatar-role">Auto & Retail Ads</div></div>
-            <div class="avatar-card card-3d" data-cat="business" onclick="pickCharacter(this, 'Biz #6 - Neha (Education)')"><span class="select-badge">✓ SELECTED</span><img src="biz6.jpg" alt="Biz 6"><div class="avatar-name">Biz #6 - Neha</div><div class="avatar-role">Coaching & Courses</div></div>
+            <div class="avatar-card card-3d" data-cat="business" onclick="pickAndZoomCharacter(this, 'Biz #1 - Vikram (Real Estate)', 'biz1.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="biz1.jpg" alt="Biz 1"><div class="avatar-name">Biz #1 - Vikram</div><div class="avatar-role">Luxury Real Estate</div></div>
+            <div class="avatar-card card-3d" data-cat="business" onclick="pickAndZoomCharacter(this, 'Biz #2 - Priya (Property Host)', 'biz2.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="biz2.jpg" alt="Biz 2"><div class="avatar-name">Biz #2 - Priya</div><div class="avatar-role">Property Walkthrough</div></div>
+            <div class="avatar-card card-3d" data-cat="business" onclick="pickAndZoomCharacter(this, 'Biz #3 - Rajeev (Consultant)', 'biz3.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="biz3.jpg" alt="Biz 3"><div class="avatar-name">Biz #3 - Rajeev</div><div class="avatar-role">Business & B2B</div></div>
+            <div class="avatar-card card-3d" data-cat="business" onclick="pickAndZoomCharacter(this, 'Biz #4 - Sneha (Anchor)', 'biz4.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="biz4.jpg" alt="Biz 4"><div class="avatar-name">Biz #4 - Sneha</div><div class="avatar-role">News & Explainer</div></div>
+            <div class="avatar-card card-3d" data-cat="business" onclick="pickAndZoomCharacter(this, 'Biz #5 - Karan (Showroom)', 'biz5.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="biz5.jpg" alt="Biz 5"><div class="avatar-name">Biz #5 - Karan</div><div class="avatar-role">Auto & Retail Ads</div></div>
+            <div class="avatar-card card-3d" data-cat="business" onclick="pickAndZoomCharacter(this, 'Biz #6 - Neha (Education)', 'biz6.jpg')"><span class="zoom-hint">🔍</span><span class="select-badge">✓ SELECTED</span><img src="biz6.jpg" alt="Biz 6"><div class="avatar-name">Biz #6 - Neha</div><div class="avatar-role">Coaching & Courses</div></div>
         </div>
     </div>
 
@@ -303,7 +338,7 @@
                 <div class="offer-title">🚀 15 Reels Monthly Offer</div>
                 <div class="offer-price"><del>₹14,999</del> ₹10,999 <span style="font-size:12px; color:#94a3b8;">/ month</span></div>
                 <ul class="offer-list">
-                    <li>✅ 15 High-Converting AI UGC Reels</li>
+                    <li>✅ 15 High-Converting Reels (AI UGC or Raw Clip Edits)</li>
                     <li>✅ Multiple Men & Girls AI Characters</li>
                     <li>✅ Viral Hook Scripts + Trending Subtitles</li>
                 </ul>
@@ -315,7 +350,7 @@
                 <div class="offer-title">👑 30 Reels Monthly Mega Offer</div>
                 <div class="offer-price"><del>₹29,999</del> ₹18,999 <span style="font-size:12px; color:#94a3b8;">/ month</span></div>
                 <ul class="offer-list">
-                    <li>✅ 30 AI UGC Reels (Daily 1 Video)</li>
+                    <li>✅ 30 Reels (Daily 1 Fresh Video)</li>
                     <li>✅ Custom Brand Avatar Free Included</li>
                     <li>✅ A/B Testing Hooks + Priority Delivery</li>
                 </ul>
@@ -324,14 +359,14 @@
         </div>
     </div>
 
-    <!-- 4. INTERACTIVE PACKAGE BUILDER -->
+    <!-- 4. INTERACTIVE PACKAGE BUILDER (WITH RAW CLIPS EDITING PACKAGE) -->
     <div class="container" id="builder">
         <h2 class="section-title">Build Your Custom Package</h2>
-        <p class="section-desc">Selected character aur services check karein, price dekhein aur book karein</p>
+        <p class="section-desc">AI UGC ya Raw Clips Editing — apni requirement select karke direct book karein</p>
 
         <div class="builder-box">
             <div class="form-group">
-                <label class="form-label">1. Selected AI Character / Model:</label>
+                <label class="form-label">1. Selected AI Character / Model (If AI Video):</label>
                 <div class="selected-char-display">
                     <span id="chosenCharText">Men #1 - Aarav (Tech/Fitness)</span>
                     <a href="#characters" class="change-char-link">Change Model ↑</a>
@@ -341,6 +376,16 @@
             <div class="form-group">
                 <label class="form-label">2. Select Package or Services:</label>
                 
+                <label class="service-check">
+                    <span class="service-left"><input type="checkbox" class="srv" data-name="Raw Clips to Pro Edited Video (1 Reel)" value="499" onchange="calculateTotal()"> ✂️ Raw Clips Pro Video Edit (Client Footage)</span>
+                    <span class="service-price">₹499</span>
+                </label>
+
+                <label class="service-check">
+                    <span class="service-left"><input type="checkbox" class="srv" data-name="3 Raw Clips Pro Reels Bundle" value="1299" onchange="calculateTotal()"> ✂️ 3 Raw Clips Pro Reels Bundle</span>
+                    <span class="service-price">₹1,299</span>
+                </label>
+
                 <label class="service-check offer-highlight">
                     <span class="service-left"><input type="checkbox" id="offer15" class="srv" data-name="15 Reels Monthly Offer Plan" value="10999" onchange="calculateTotal()"> 15 Reels Monthly Plan <span class="offer-tag">OFFER</span></span>
                     <span class="service-price">₹10,999</span>
@@ -352,27 +397,22 @@
                 </label>
 
                 <label class="service-check">
-                    <span class="service-left"><input type="checkbox" class="srv" data-name="1 Single AI UGC Video (30 Sec)" value="999" checked onchange="calculateTotal()"> 1 Single AI UGC Video (30 Sec)</span>
+                    <span class="service-left"><input type="checkbox" class="srv" data-name="1 Single AI UGC Video (30 Sec)" value="999" checked onchange="calculateTotal()"> 🤖 1 Single AI UGC Video (30 Sec)</span>
                     <span class="service-price">₹999</span>
                 </label>
 
                 <label class="service-check">
-                    <span class="service-left"><input type="checkbox" class="srv" data-name="3 AI UGC Videos Starter Bundle" value="2499" onchange="calculateTotal()"> 3 AI UGC Videos Bundle</span>
+                    <span class="service-left"><input type="checkbox" class="srv" data-name="3 AI UGC Videos Starter Bundle" value="2499" onchange="calculateTotal()"> 🤖 3 AI UGC Videos Bundle</span>
                     <span class="service-price">₹2,499</span>
                 </label>
 
                 <label class="service-check">
-                    <span class="service-left"><input type="checkbox" class="srv" data-name="Real Estate / Property Promo Video" value="1499" onchange="calculateTotal()"> Real Estate / Property Promo Video</span>
-                    <span class="service-price">₹1,499</span>
-                </label>
-
-                <label class="service-check">
-                    <span class="service-left"><input type="checkbox" class="srv" data-name="Viral Script + 2 Extra Hooks" value="499" onchange="calculateTotal()"> Viral Script + 2 Extra Hooks</span>
+                    <span class="service-left"><input type="checkbox" class="srv" data-name="Viral Script + 2 Extra Hooks" value="499" onchange="calculateTotal()"> ✍️ Viral Script + 2 Extra Hooks</span>
                     <span class="service-price">₹499</span>
                 </label>
 
                 <label class="service-check">
-                    <span class="service-left"><input type="checkbox" class="srv" data-name="Custom AI Avatar Creation" value="1999" onchange="calculateTotal()"> Custom AI Avatar (Apna Face/Model)</span>
+                    <span class="service-left"><input type="checkbox" class="srv" data-name="Custom AI Avatar Creation" value="1999" onchange="calculateTotal()"> 🎭 Custom AI Avatar (Apna Face/Model)</span>
                     <span class="service-price">₹1,999</span>
                 </label>
             </div>
@@ -380,7 +420,7 @@
             <div class="form-group">
                 <label class="form-label">3. Your Details:</label>
                 <input type="text" id="clientName" class="text-input" placeholder="Aapka Naam / Brand Name *" required>
-                <input type="text" id="clientNote" class="text-input" placeholder="Koi special note ya product detail (Optional)">
+                <input type="text" id="clientNote" class="text-input" placeholder="Koi special note (e.g. Raw clips edit ya product detail)">
             </div>
 
             <div class="total-bar">
@@ -417,8 +457,21 @@
                 </div>
                 <div class="review-item">
                     <div class="review-author">★★★★★ <span>Amit Real Estate Jaipur</span></div>
-                    <div class="review-text">24 ghante mein property walkthrough video mil gaya, super fast service.</div>
+                    <div class="review-text">Maine apni raw clips bheji thi, unhone B-rolls lagakar ekdum pro ad bana diya!</div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX POPUP MODAL (FOR FLOATING VIDEO WITH SOUND & ZOOMED AVATAR) -->
+    <div class="popup-overlay" id="popupOverlay" onclick="closePopup(event)">
+        <div class="popup-box" id="popupBox" onclick="event.stopPropagation()">
+            <button class="popup-back-btn" onclick="forceClosePopup()">← Back</button>
+            <div id="popupMediaArea"></div>
+            <div class="popup-title" id="popupTitle"></div>
+            <div class="popup-controls" id="popupVideoControls" style="display:none;">
+                <button class="p-ctrl-btn" id="popupPlayBtn" onclick="togglePopupPlay()">⏸ Pause</button>
+                <button class="p-ctrl-btn" style="background:#1e293b; color:#fff;" onclick="forceClosePopup()">Done</button>
             </div>
         </div>
     </div>
@@ -433,31 +486,69 @@
         let chosenCharacter = "Men #1 - Aarav (Tech/Fitness)";
         let selectedStars = 5;
 
-        // Custom Video Play/Pause & Volume Controls
-        function togglePlay(vidId, btn) {
-            const v = document.getElementById(vidId);
-            if (v.paused) {
-                document.querySelectorAll('video').forEach(other => {
-                    if (other.id !== vidId) other.pause();
-                });
-                v.play();
-                btn.innerText = "⏸";
+        // Open Floating Video Modal with Full Sound & Play/Pause
+        function openVideoModal(videoSrc, title, isWide) {
+            const overlay = document.getElementById('popupOverlay');
+            const box = document.getElementById('popupBox');
+            const area = document.getElementById('popupMediaArea');
+            const ctrls = document.getElementById('popupVideoControls');
+            
+            if (isWide) {
+                box.classList.add('wide-modal');
             } else {
-                v.pause();
-                btn.innerText = "▶";
+                box.classList.remove('wide-modal');
+            }
+
+            area.innerHTML = `<video id="activeModalVid" src="${videoSrc}" autoplay loop playsinline></video>`;
+            document.getElementById('popupTitle').innerText = title;
+            document.getElementById('popupPlayBtn').innerText = "⏸ Pause";
+            ctrls.style.display = "flex";
+            overlay.style.display = "flex";
+        }
+
+        function togglePopupPlay() {
+            const vid = document.getElementById('activeModalVid');
+            const btn = document.getElementById('popupPlayBtn');
+            if (!vid) return;
+            if (vid.paused) {
+                vid.play();
+                btn.innerText = "⏸ Pause";
+            } else {
+                vid.pause();
+                btn.innerText = "▶ Play";
             }
         }
 
-        function toggleMute(vidId, btn) {
-            const v = document.getElementById(vidId);
-            v.muted = !v.muted;
-            btn.innerText = v.muted ? "🔇" : "🔊";
+        // Pick Character AND Zoom Photo in Floating Card
+        function pickAndZoomCharacter(cardElement, charName, imgSrc) {
+            document.querySelectorAll('.avatar-card').forEach(c => c.classList.remove('selected-char'));
+            cardElement.classList.add('selected-char');
+            chosenCharacter = charName;
+            document.getElementById('chosenCharText').innerText = charName;
+
+            const overlay = document.getElementById('popupOverlay');
+            const box = document.getElementById('popupBox');
+            const area = document.getElementById('popupMediaArea');
+            const ctrls = document.getElementById('popupVideoControls');
+
+            box.classList.remove('wide-modal');
+            area.innerHTML = `<img src="${imgSrc}" alt="${charName}">`;
+            document.getElementById('popupTitle').innerText = "✅ Selected: " + charName;
+            ctrls.style.display = "none";
+            overlay.style.display = "flex";
         }
 
-        function changeVol(vidId, val) {
-            const v = document.getElementById(vidId);
-            v.volume = val;
-            v.muted = (val == 0);
+        function closePopup(e) {
+            if (e.target.id === 'popupOverlay') {
+                forceClosePopup();
+            }
+        }
+
+        function forceClosePopup() {
+            const overlay = document.getElementById('popupOverlay');
+            const area = document.getElementById('popupMediaArea');
+            area.innerHTML = ''; // Stops sound immediately
+            overlay.style.display = 'none';
         }
 
         // 3D Phone Tilt Movement
@@ -490,14 +581,6 @@
             });
         }
 
-        // Pick Character
-        function pickCharacter(cardElement, charName) {
-            document.querySelectorAll('.avatar-card').forEach(c => c.classList.remove('selected-char'));
-            cardElement.classList.add('selected-char');
-            chosenCharacter = charName;
-            document.getElementById('chosenCharText').innerText = charName;
-        }
-
         // Select Monthly Offer
         function selectMonthlyOffer(offerId) {
             document.querySelectorAll('.srv').forEach(box => box.checked = false);
@@ -514,7 +597,7 @@
             document.getElementById('totalPrice').innerText = total.toLocaleString('en-IN');
         }
 
-        // Direct WhatsApp App Protocol (No browser popup)
+        // Direct WhatsApp App Protocol
         function bookNow() {
             const myWhatsAppNumber = "917597145560";
             const name = document.getElementById('clientName').value.trim();
@@ -536,7 +619,7 @@
                 return;
             }
 
-            const message = `*🔥 NEW AI UGC ORDER BOOKING 🔥*\n\n` +
+            const message = `*🔥 NEW STUDIO ORDER BOOKING 🔥*\n\n` +
                             `*👤 Client Name:* ${name}\n` +
                             `*🎭 Selected AI Model:* ${chosenCharacter}\n\n` +
                             `*📦 Selected Services:*\n${selectedServices.join('\n')}\n\n` +
@@ -544,7 +627,6 @@
                             `*📝 Note:* ${note}`;
 
             const encoded = encodeURIComponent(message);
-            // Direct WhatsApp App URI
             window.location.href = `whatsapp://send?phone=${myWhatsAppNumber}&text=${encoded}`;
         }
 
